@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hana Al-Shamrani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    nav { position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.9); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+    nav .logo { font-weight: 700; font-size: 1.4rem; color: #38bdf8; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav a { color: #e2e8f0; text-decoration: none; }
+    nav a:hover { color: #38bdf8; }
+    section { padding: 100px 10%; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+    .hero h1 { font-size: 3.5rem; }
+    .hero h1 span { color: #38bdf8; }
+    .hero p { font-size: 1.2rem; color: #94a3b8; margin: 15px 0 30px; }
+    .btn { display: inline-block; padding: 12px 30px; background: #38bdf8; color: #0f172a; border-radius: 30px; text-decoration: none; font-weight: 600; width: fit-content; }
+    h2 { font-size: 2.2rem; margin-bottom: 40px; color: #38bdf8; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .card { background: #1e293b; padding: 25px; border-radius: 12px; }
+    .card h3 { margin-bottom: 10px; }
+    .card small { color: #94a3b8; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag { background: #1e293b; padding: 8px 16px; border-radius: 20px; }
+    footer { text-align: center; padding: 30px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Hana.</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Hi, I'm <span>Hana Al-Shamrani</span></h1>
+    <p>Computer Engineer | AI & Computer Vision | Back-End Development</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Computer Engineering graduate from Taif University with practical experience in Artificial Intelligence, Computer Vision, Embedded Systems, and Back-End Development. I worked as a Business Intelligence &amp; Technical Intern at Rimal X Accelerator &amp; Incubator.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span>
+      <span class="tag">Computer Vision</span><span class="tag">OpenCV</span><span class="tag">Deep Learning</span><span class="tag">Machine Learning</span>
+      <span class="tag">REST APIs</span><span class="tag">HTML/CSS</span><span class="tag">Arduino</span><span class="tag">Raspberry Pi</span>
+      <span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Unity</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card"><h3>AquaVenture</h3><small>Graduation Project · 1st Place</small><p>Autonomous underwater vehicle with AI and Computer Vision for marine exploration.</p></div>
+      <div class="card"><h3>Rimal Flow</h3><small>Rimal X</small><p>Smart booking and venue operations system.</p></div>
+      <div class="card"><h3>Movement Detection System</h3><small>Taif University</small><p>Arduino-based security system that detects unauthorized entry.</p></div>
+      <div class="card"><h3>TEDx Okadh Ticket Scanner</h3><small>TEDx Okadh</small><p>Web tool to scan and verify attendee tickets.</p></div>
+      <div class="card"><h3>Unity Game</h3><small>Game Development</small><p>A game built with Unity and C#.</p></div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="grid">
+      <div class="card"><h3>NVIDIA DLI</h3><p>Building RAG Agents with LLMs<br>Adding New Knowledge to LLMs<br>Rapid Application Development with LLMs</p></div>
+      <div class="card"><h3>SDAIA</h3><p>Modern Data Engineering for AI Systems</p></div>
+      <div class="card"><h3>Tuwaiq Academy</h3><p>Data Analysis Using R Programming</p></div>
+      <div class="card"><h3>ISC2 / IBM / UC Davis</h3><p>Cybersecurity &amp; Secure Coding</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hana3hjs@gmail.com" style="color:#38bdf8">hana3hjs@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Enghanamansour" style="color:#38bdf8">github.com/Enghanamansour</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/hana-al-shamrani-855946228" style="color:#38bdf8">linkedin.com/in/hana-al-shamrani-855946228</a></p>
+  </section>
+
+  <footer>© 2026 Hana Al-Shamrani</footer>
+<a class="exp-back" href="../" style="position:fixed;left:16px;bottom:16px;z-index:300;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:#2a0a17;color:#fff;font:600 13px/1 Inter,system-ui,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35)">↩ A · B</a>
+</body>
+</html>

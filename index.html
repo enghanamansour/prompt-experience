@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hana Al-Shamrani — Choose the Experience</title>
+  <meta name="description" content="Same person, same projects, two prompts. See what a weak prompt builds — and what a strong one does.">
+  <meta property="og:title" content="Experience the power of a strong prompt — Hana Al-Shamrani">
+  <meta property="og:description" content="Same person, same projects, two prompts. Pick A (weak) or B (strong).">
+  <meta property="og:image" content="https://enghanamansour.github.io/prompt-experience/og.jpg">
+  <meta property="og:url" content="https://enghanamansour.github.io/prompt-experience/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1a0710">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%239f1239'/%3E%3Cpath d='M10 32 Q32 10 54 32 Q32 54 10 32Z' fill='none' stroke='%23fbcfe8' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23fbcfe8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #14060d; --ink: #fde8ec; --muted: #c9a3af; --wine: #9f1239; --red: #e11d48; --rose: #fb7185; --baby: #fbcfe8; --amber: #fbbf24;
+      --display: 'Bricolage Grotesque', 'IBM Plex Sans Arabic', sans-serif; --hand: 'Caveat', cursive; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; font: 400 1rem/1.6 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif; color: var(--ink); overflow-x: hidden;
+      background: radial-gradient(900px 500px at 50% 38%, rgba(225, 29, 72, .22), transparent 70%), radial-gradient(600px 400px at 12% 85%, rgba(251, 191, 36, .1), transparent 70%), radial-gradient(600px 400px at 88% 80%, rgba(251, 113, 133, .14), transparent 70%), var(--bg); }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px) 0 0 / 100% 48px, linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px) 0 0 / 48px 100%; -webkit-mask: radial-gradient(ellipse at 50% 40%, #000, transparent 75%); mask: radial-gradient(ellipse at 50% 40%, #000, transparent 75%); }
+    a { color: inherit; }
+    .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+    :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+
+    nav { display: flex; align-items: center; gap: 6px; width: max-content; max-width: calc(100% - 32px); margin: 22px auto 0; padding: 6px; border-radius: 999px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); backdrop-filter: blur(10px); }
+    nav a { padding: 8px 16px; border-radius: 999px; font-size: .88rem; text-decoration: none; color: var(--muted); white-space: nowrap; }
+    nav a.on { background: var(--wine); color: #fff; }
+    nav a:hover { color: #fff; }
+
+    header { text-align: center; padding: 64px 0 10px; }
+    .kick { font: 600 .78rem 'Inter', sans-serif; letter-spacing: .4em; text-transform: uppercase; color: var(--muted); }
+    h1 { font: 800 clamp(2.4rem, 6.4vw, 4.8rem)/1 var(--display); letter-spacing: -.04em; margin-top: 16px; }
+    h1 em { font-style: normal; background: linear-gradient(90deg, var(--rose), var(--baby)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .sub { margin-top: 16px; color: var(--muted); font-size: 1.08rem; }
+    .sub-ar { margin-top: 4px; font-family: 'IBM Plex Sans Arabic', sans-serif; color: var(--muted); }
+
+    /* the stage: the eye in the middle, the two versions orbiting it */
+    .stage { position: relative; display: grid; grid-template-columns: 1fr 260px 1fr; align-items: center; gap: 30px; padding: 40px 0 30px; perspective: 1400px; }
+    .orbits { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+    .orbits path { fill: none; stroke-width: 1.6; stroke-dasharray: 2 9; stroke-linecap: round; animation: march 1.6s linear infinite; }
+    @keyframes march { to { stroke-dashoffset: -22; } }
+    .core { position: relative; display: grid; place-items: center; aspect-ratio: 1; }
+    .core::before, .core::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(251, 113, 133, .25); animation: ring 4s ease-out infinite; }
+    .core::after { animation-delay: 2s; }
+    @keyframes ring { from { transform: scale(.55); opacity: 1; } to { transform: scale(1.15); opacity: 0; } }
+    .core-in { position: relative; width: 78%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 40% 35%, #3a1022, #1a0710 70%); box-shadow: 0 0 0 1px rgba(251, 113, 133, .25), 0 0 60px rgba(225, 29, 72, .35); }
+    .eye { width: 70%; color: var(--baby); }
+    .eye path, .eye circle.o { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; }
+    .eye .pupil { transition: transform .12s linear; }
+    .core-note { position: absolute; bottom: -42px; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 260px; text-align: center; font: 700 1.3rem var(--hand); color: var(--rose); }
+
+    .card { --c: var(--rose); position: relative; display: block; text-decoration: none; padding: 18px; border-radius: 26px; background: linear-gradient(160deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03)); border: 1px solid color-mix(in srgb, var(--c) 45%, transparent); box-shadow: 0 30px 60px rgba(0, 0, 0, .45), 0 0 50px color-mix(in srgb, var(--c) 18%, transparent); backdrop-filter: blur(10px);
+      transform: rotateY(var(--ry)) translateY(0); transition: transform .5s cubic-bezier(.2, .8, .2, 1), box-shadow .5s; animation: float 6s ease-in-out infinite; }
+    .card.a { --c: var(--amber); --ry: 10deg; } .card.c { --c: var(--rose); --ry: -10deg; animation-delay: -3s; }
+    @keyframes float { 50% { translate: 0 -10px; } }
+    .card:hover { transform: rotateY(0) translateY(-8px) scale(1.02); box-shadow: 0 40px 80px rgba(0, 0, 0, .5), 0 0 80px color-mix(in srgb, var(--c) 35%, transparent); }
+    .badge { position: absolute; top: -18px; left: 22px; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font: 800 1.6rem var(--display); color: #1a0710; background: var(--c); box-shadow: 0 10px 24px color-mix(in srgb, var(--c) 45%, transparent); }
+    .shot { border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 10; border: 1px solid rgba(255, 255, 255, .12); }
+    .shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s; }
+    .card:hover .shot img { transform: scale(1.04); }
+    .card h2 { font: 800 1.45rem var(--display); letter-spacing: -.02em; margin: 16px 0 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .card h2 small { font: 600 .95rem 'IBM Plex Sans Arabic', sans-serif; color: var(--muted); }
+    .card blockquote { font: 600 1.25rem/1.25 var(--hand); color: color-mix(in srgb, var(--c) 70%, #fff); padding-left: 12px; border-left: 2px solid var(--c); margin: 10px 0 14px; }
+    .card ul { list-style: none; display: grid; gap: 4px; font-size: .86rem; color: var(--muted); }
+    .card li::before { content: "— "; color: var(--c); }
+    .go { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; font-weight: 600; font-size: .92rem; }
+    .go i { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 1.2rem; background: var(--c); color: #1a0710; transition: transform .3s; }
+    .card:hover .go i { transform: translateX(4px); }
+
+    /* what changed */
+    .diff { margin: 70px auto 0; max-width: 900px; border-radius: 22px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .1); background: rgba(255, 255, 255, .03); }
+    .diff h3 { padding: 18px 22px; font: 700 1.4rem var(--hand); color: var(--rose); border-bottom: 1px solid rgba(255, 255, 255, .08); }
+    .row { display: grid; grid-template-columns: 150px 1fr 1fr; gap: 16px; padding: 12px 22px; border-bottom: 1px solid rgba(255, 255, 255, .06); font-size: .9rem; }
+    .row:last-child { border: 0; }
+    .row b { color: var(--muted); font-weight: 600; } .row span:nth-child(2) { color: #e8d3a0; } .row span:nth-child(3) { color: var(--baby); }
+    .row.head { font: 700 .72rem 'Inter', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    footer { text-align: center; padding: 50px 0 40px; color: var(--muted); font-size: .85rem; }
+
+    @media (max-width: 900px) {
+      .stage { grid-template-columns: 1fr; gap: 40px; padding-top: 30px; }
+      .orbits { display: none; }
+      .core { width: 200px; margin: 0 auto 30px; order: -1; }
+      .card { --ry: 0deg !important; animation: none; }
+      .row { grid-template-columns: 1fr 1fr; } .row b { grid-column: 1 / -1; }
+      nav a { padding: 8px 11px; font-size: .8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <nav aria-label="Experiences"><a class="on" href="./">Home</a><a href="weak/">A · Weak</a><a href="https://enghanamansour.github.io/portfolio/">B · Strong</a><a href="#diff">What changed</a></nav>
+
+  <main class="wrap">
+    <header>
+      <p class="kick">Welcome · أهلاً</p>
+      <h1>Experience the power<br>of a <em>strong prompt</em>.</h1>
+      <p class="sub">Same person. Same projects. Two prompts. Pick one.</p>
+      <p class="sub-ar" lang="ar" dir="rtl">نفس الشخص، نفس المشاريع، أمران مختلفان. اختر تجربتك.</p>
+    </header>
+
+    <section class="stage" aria-label="Choose an experience">
+      <svg class="orbits" viewBox="0 0 1180 520" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M590 260 C 470 120, 300 90, 210 150" stroke="#fbbf24"/>
+        <path d="M590 260 C 710 120, 880 90, 970 150" stroke="#fb7185"/>
+      </svg>
+
+      <a class="card a" href="weak/">
+        <span class="badge">A</span>
+        <div class="shot"><img src="assets/preview-a.jpg" alt="Preview of version A: a plain dark page with the name and a button"></div>
+        <h2>Weak prompt <small lang="ar">أمر ضعيف</small></h2>
+        <blockquote>“Build me a personal website that looks modern and includes information about me.”</blockquote>
+        <ul><li>one generic page</li><li>projects as one-liners, no links</li><li>English only</li></ul>
+        <span class="go">See version A <i>→</i></span>
+      </a>
+
+      <div class="core" aria-hidden="true">
+        <div class="core-in">
+          <svg class="eye" id="eye" viewBox="0 0 160 100"><path d="M8 52 Q80 -8 152 52 Q80 112 8 52 Z"/><circle class="o" cx="80" cy="52" r="26"/><g class="pupil" id="pupil"><circle cx="80" cy="52" r="13" fill="currentColor"/><circle cx="85" cy="47" r="4" fill="#1a0710"/></g><path d="M30 22 L22 8 M60 10 L58 -4 M100 10 L102 -4 M130 22 L138 8"/></svg>
+        </div>
+        <p class="core-note">same Hana, two prompts</p>
+      </div>
+
+      <a class="card c" href="https://enghanamansour.github.io/portfolio/">
+        <span class="badge">B</span>
+        <div class="shot"><img src="assets/preview-b.jpg" alt="Preview of version B: the name sketched in wine red on pink paper with a doodled eye"></div>
+        <h2>Strong prompt <small lang="ar">أمر قوي</small></h2>
+        <blockquote>“Act as a portfolio designer. Ask me first. Build it around who I am — my projects, my sea, my stars, my games. Don't invent numbers.”</blockquote>
+        <ul><li>8 projects, each a world you can play with</li><li>English + Arabic, mobile-tested</li><li>her own identity and hobbies</li></ul>
+        <span class="go">See version B <i>→</i></span>
+      </a>
+    </section>
+
+    <section class="diff" id="diff" aria-labelledby="diffH">
+      <h3 id="diffH">what changed between A and B</h3>
+      <div class="row head"><b></b><span>A · weak</span><span>B · strong</span></div>
+      <div class="row"><b>Graduation project</b><span>a one-line card</span><span>the centerpiece — 1st place, newspaper, live YOLO toy</span></div>
+      <div class="row"><b>Projects</b><span>5 one-liners, no links</span><span>8 worlds with role, result, links and a toy each</span></div>
+      <div class="row"><b>Personality</b><span>none</span><span>drawing, volleyball, the sea, stars, games, One Piece</span></div>
+      <div class="row"><b>Language</b><span>English only</span><span>English + Arabic (right-to-left)</span></div>
+      <div class="row"><b>Mobile</b><span>nav overflows</span><span>tested at phone width in both languages</span></div>
+      <div class="row"><b>Honesty</b><span>—</span><span>no invented numbers, real links, illustrative demos labelled</span></div>
+    </section>
+  </main>
+
+  <footer>Hana Al-Shamrani · Computer Engineer · 2026</footer>
+
+  <script>
+    // the eye in the middle watches the cursor
+    const eye = document.getElementById('eye'), pupil = document.getElementById('pupil');
+    addEventListener('pointermove', e => {
+      const r = eye.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height * .52;
+      const a = Math.atan2(e.clientY - cy, e.clientX - cx), d = Math.min(1, Math.hypot(e.clientX - cx, e.clientY - cy) / 300);
+      pupil.style.transform = `translate(${(Math.cos(a) * 12 * d).toFixed(1)}px, ${(Math.sin(a) * 9 * d).toFixed(1)}px)`;
+    }, { passive: true });
+  </script>
+</body>
+</html>
